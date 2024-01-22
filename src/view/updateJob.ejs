@@ -1,0 +1,23 @@
+<form action="/updateJob/<%=id%>" method="post">
+  <div class="mb-3">
+    <label for="role" class="form-label">Role</label>
+    <input type="text" class="form-control" id="role" name="role" />
+  </div>
+  <div class="mb-3">
+    <label for="location" class="form-label">Location</label>
+    <input type="text" class="form-control" id="location" name="location" />
+  </div>
+
+  <div class="mb-3">
+    <label for="salary" class="form-label">Salary</label>
+    <input
+      type="number"
+      class="form-control"
+      id="salary"
+      name="salary"
+      min="0"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

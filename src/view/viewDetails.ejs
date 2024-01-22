@@ -1,0 +1,110 @@
+<h1 class="mt-5 mb-4 header">Apply to <%=job.role%> role at <%=job.name%></h1>
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title"><%=job.role%></h5>
+    <p class="card-text" style="color: red">
+      No. of Applicants applied : <%=count%>
+    </p>
+
+    <!-- Button trigger modal -->
+    <% if(!userEmail){%>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      Apply
+    </button>
+    <%}%>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Submit Details
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/job-apply/<%=job.id%>"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="email"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="qualification" class="form-label">Qualification</label>
+            <input
+              type="text"
+              class="form-control"
+              id="qualification"
+              name="qualification"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="mobile"
+              name="mobile"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            />
+            <small>Format: 123-456-7890</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="resume" class="form-label">Upload Resume</label>
+            <input
+              type="file"
+              class="form-control"
+              id="resume"
+              name="resume"
+              accept=".pdf"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

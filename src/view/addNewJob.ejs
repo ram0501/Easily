@@ -1,0 +1,38 @@
+<h1 class="mt-5 mb-4 header">Add New Job</h1>
+
+<form action="/add-job-new" method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="name" class="form-label">Company Name</label>
+    <input type="text" class="form-control" id="name" name="name" />
+  </div>
+  <div class="mb-3">
+    <label for="role" class="form-label">Role</label>
+    <input type="text" class="form-control" id="role" name="role" />
+  </div>
+  <div class="mb-3">
+    <label for="location" class="form-label">Location</label>
+    <input type="text" class="form-control" id="location" name="location" />
+  </div>
+  <div class="mb-3">
+    <label for="salary" class="form-label">Salary</label>
+    <input
+      type="number"
+      class="form-control"
+      id="salary"
+      name="salary"
+      placeholder="salary in LPA"
+      min="0"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="imgUrl" class="form-label">Upload Image</label>
+    <input
+      type="file"
+      class="form-control"
+      id="imgUrl"
+      name="imgUrl"
+      accept="image/*"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

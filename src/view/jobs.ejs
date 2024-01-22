@@ -1,0 +1,37 @@
+<div class="d-flex flex-wrap justify-content-evenly">
+  <%jobs.forEach((job)=>{%>
+  <div class="card" style="width: 18rem; margin-top: 6rem">
+    <img
+      src="<%=job.img%>"
+      class="card-img-top"
+      alt="..."
+      style="height: 150px"
+    />
+    <%if(userEmail){%>
+    <a href="/updatejob/<%=job.id%>" class="btn btn-outline-warning"
+      >Update Job</a
+    >
+    <!-- <a href="/deleteJob/<%=job.id%>" class="btn btn-outline-danger"
+      >Delete Job</a
+    > -->
+    <button class="btn btn-outline-danger" onclick="deleteJob('<%=job.id%>')">
+      Delete Job
+    </button>
+    <a href="/view-applicants/<%=job.id%>" class="btn btn-info"
+      >View Applicants</a
+    >
+    <%}%>
+    <div class="card-body">
+      <h5 class="card-title"><%= job.name%></h5>
+      <p class="card-text"><strong>Tech</strong>: <%=job.role%></p>
+      <p class="card-text"><strong>Loation</strong>:<%=job.location%></p>
+      <p class="card-text"><strong>Salary</strong>: Upto <%=job.salary%> LPA</p>
+      <div class="card-footer">
+        <a href="/view-detail/<%=job.id%>" class="btn btn-outline-success"
+          >View Details</a
+        >
+      </div>
+    </div>
+  </div>
+  <%})%>
+</div>

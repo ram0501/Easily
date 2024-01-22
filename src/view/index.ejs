@@ -1,0 +1,37 @@
+<%if(!userEmail){%>
+<div class="d-flex justify-content-evenly">
+  <div class="card" style="width: 18rem; margin-top: 6rem">
+    <img src="/images/job_seeker.jpg" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">I'm Job Seeker</h5>
+      <p class="card-text">The best time for new beginnings is now.</p>
+      <a href="/jobs" class="btn btn-primary">I'm a Job Seeker</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem; margin-top: 6rem">
+    <img src="/images/recruiter.jpg" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">I'm Recruiter</h5>
+      <p class="card-text">There's no recruitment without marketing.</p>
+      <a href="/login" class="btn btn-primary">Login As Recruiter</a>
+    </div>
+  </div>
+</div>
+<%}else{ if(locals.lastVisit){ %>
+<div class="alert alert-primary" role="alert">
+  Your last visit was on : <%= locals.lastVisit %>
+</div>
+<%}%>
+<p
+  style="
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 5rem;
+    color: orangered;
+    background-color: black;
+  "
+>
+  Welcome <%=name%>
+</p>
+
+<%}%>

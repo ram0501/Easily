@@ -1,0 +1,29 @@
+<h1 class="mt-5 mb-4 header">Applicants Detail for <%=companyName%></h1>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Qualification</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Resume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% aplicants.forEach((aplicant)=>{ %>
+    <tr>
+      <td><%= aplicant.name %></td>
+      <td><%= aplicant.email %></td>
+      <td><%= aplicant.qualification %></td>
+      <td><%= aplicant.mobile %></td>
+
+      <td>
+        <a href="<%= aplicant.resumePDF %>" target="_blank"
+          ><%= aplicant.name %></a
+        >
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
